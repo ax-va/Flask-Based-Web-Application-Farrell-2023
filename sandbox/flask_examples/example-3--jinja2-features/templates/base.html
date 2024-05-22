@@ -1,0 +1,33 @@
+<!-- Parent template containing all the common features presented on the web pages of the application -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %} <!-- Template section "head" referenced in a child template by referring to the block name -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Web Application</title>
+    {% block styles %} <!-- Template section "styles" referred to by child templates to insert CSS file references -->
+    <!--  styles will be applied to every HTML page inheriting base.html  -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/myblog.css') }}">
+    {% endblock %} <!-- Template section "styles" -->
+    {% endblock %} <!-- Template section "head" -->
+</head>
+
+<body>
+    <div id="header">
+        <h1>MyBlog Home Page</h1>
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %} <!-- Template section "content" -->
+    </div>
+    <div id="footer">
+        {% block footer %} <!-- Template section "footer" -->
+        <h4>Copyright &copy; 2024 by MyBlog</h4>
+        {% endblock %} <!-- Template section "footer" -->
+    </div>
+</body>
+{% block scripts %}{% endblock %} <!-- Template section "scripts" -->
+
+</html>
