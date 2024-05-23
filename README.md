@@ -7,6 +7,7 @@ To run a Flask application using Gunicorn, you need to install it from the Pytho
 (venv) ... $ pip install gunicorn
 ```
 
+Run the webserver in a directory with `app.py`
 ``` commandline
 $ gunicorn -w 4 app:app
 ```
