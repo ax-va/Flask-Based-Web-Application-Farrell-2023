@@ -28,6 +28,8 @@ $ pkill gunicorn
 The recommended number of workers for an application running on a single production server is 
 `number_of_CPU_cores * 2 + 1`.
 
+The different workers have different backend instances.  
+
 ## Bootstrap (CSS framework)
 https://getbootstrap.com/
 
