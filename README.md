@@ -28,7 +28,8 @@ $ pkill gunicorn
 The recommended number of workers for an application running on a single production server is 
 `number_of_CPU_cores * 2 + 1`.
 
-The different workers have different backend instances.  
+The different workers have the different backend instances. 
+This results in that the page visit counters in the Python code can alternate between each other.
 
 ## Bootstrap (CSS framework)
 https://getbootstrap.com/
