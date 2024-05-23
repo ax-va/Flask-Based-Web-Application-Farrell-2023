@@ -2,7 +2,7 @@
 
 Two of the most common production-ready high-performance WSGI servers are uWSGI and Gunicorn (short for Green Unicorn).
 
-To run a Flask application using Gunicorn, you need to install it from the Python virtual environment with Flask:
+To run a Flask application using Gunicorn, you need to install it in the Python virtual environment with Flask:
 ```unix
 (venv) ... $ pip install gunicorn
 ```
