@@ -6,6 +6,9 @@ app = create_app()
 # Enter on Mac / Unix:
 """
 $ export FLASK_ENV=development
+"""
+# By default, Flask looks for the Flask "app" instance in the "FLASK_APP" environment variable
+"""
 $ export FLASK_APP=blog.py
 """
 
