@@ -11,7 +11,7 @@ Run the webserver with four worker instances in a directory with `app.py`
 ```unix
 $ gunicorn -w 4 app:app
 ```
-or `blog.py`
+or in a directory with `blog.py`
 ```
 $ gunicorn -w 4 blog:app
 ```
