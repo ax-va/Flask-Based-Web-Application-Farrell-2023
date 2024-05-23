@@ -25,7 +25,7 @@
 {% block scripts %} <!-- "block scripts" -->
 {{ super() }} <!-- Renders the parent scripts block - it is nothing currently -->
 <script>
-    // "banner_colors" is initialized with the JSON formatted string.
+    // "bannerColors" is initialized with the JSON formatted string.
     // "| safe" prevents Jinja2 from translating symbols:
     // the data could contain information that might be an XSS attack.
     const bannerColors = {{ data["banner_colors"] | tojson | safe }};

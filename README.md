@@ -16,5 +16,16 @@ The first part,`app`, corresponds to `app.py`. The second part, `:app`, refers t
 app = Flask(__name__)
 ```
 
+Stop Gunicorn by pressing `Ctrl+C` or by writing in the terminal
+```unix
+$ pkill gunicorn
+```
+
 The recommended number of workers for an application running on a single production server is 
 `number_of_CPU_cores * 2 + 1`.
+
+## Bootstrap (CSS framework)
+https://getbootstrap.com/
+
+## JSDELIVR (a free CDN for open source projects)
+https://www.jsdelivr.com/
