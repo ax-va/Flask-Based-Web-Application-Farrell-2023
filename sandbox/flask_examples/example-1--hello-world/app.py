@@ -22,7 +22,7 @@ $ export FLASK_APP=app.py
 > set FLASK_APP=app.py
 """
 
-# Then
+# Then, run the Flask built-in web server
 """
 $ flask run
  * Serving Flask app 'app.py'
