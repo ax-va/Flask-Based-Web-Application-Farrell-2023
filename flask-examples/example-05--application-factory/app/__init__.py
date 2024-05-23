@@ -13,13 +13,12 @@ def create_app():
     with app.app_context():
         @app.route("/")
         def home():
-            bcs = BannerColors.get_colors()
             return render_template(
                 "index.html",
                 data={
                     "now": datetime.now(),
                     "page_visit": PageVisit(),
-                    "banner_colors": bcs,
+                    "banner_colors": BannerColors.get_colors(),
                 }
             )
 
