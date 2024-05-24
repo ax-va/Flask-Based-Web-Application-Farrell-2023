@@ -1,8 +1,8 @@
 from datetime import datetime
 from flask import render_template
 from . import intro_bp
-from .banner_colors import BannerColors
-from .page_visit import PageVisit
+from .cls.banner_colors import BannerColors
+from .cls.page_visit import PageVisit
 
 
 @intro_bp.route("/")

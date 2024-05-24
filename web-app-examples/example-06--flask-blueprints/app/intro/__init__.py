@@ -8,5 +8,7 @@ intro_bp = Blueprint(
     static_url_path="/intro/static",  # relative to the root directory
     template_folder="templates",   # relative to the file containing the definition of intro_bp
 )
-# Import the module when the package importing
-from . import intro
+
+# Run modules to define route functions
+from . import home
+from . import about

@@ -40,3 +40,6 @@ Press CTRL+C to quit
 """
 127.0.0.1 - - [20/May/2024 21:14:48] "GET / HTTP/1.1" 200 -
 """
+
+# Open the about page
+# 127.0.0.1:5000/about
