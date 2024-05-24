@@ -19,7 +19,7 @@ $ gunicorn -w 4 blog:app
 ```
 The first part,`app` or `blog`, corresponds to `app.py` or `blog.py`, respectively. The second part, `:app`, refers to the Flask application instance created in `app.py` or `blog.py`:
 ```python
-app = Flask(__name__)
+app: Flask = ...
 ```
 
 Stop Gunicorn by pressing `Ctrl+C` or by writing in the terminal
