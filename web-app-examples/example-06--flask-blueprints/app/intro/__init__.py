@@ -9,6 +9,6 @@ intro_bp = Blueprint(
     template_folder="templates",   # relative to the file containing the definition of intro_bp
 )
 
-# Run modules to define route functions
+# Run modules to define the route functions in them
 from . import home
 from . import about
