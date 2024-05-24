@@ -1,11 +1,12 @@
 from flask import Flask
 
 
-def create_app():
-    """ Application factory creating the Flask app instance """
+def create_app() -> Flask:
+    """ This application factory creates the Flask app instance with the application context """
     app = Flask(__name__)
     with app.app_context():
-        from . import intro  # Import the package "intro" that imports the module "intro"
+        # Import the "intro" package, which in turn imports the "intro" module
+        from . import intro
         # Register intro.intro_bp with app
         app.register_blueprint(intro.intro_bp)
 
