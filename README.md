@@ -51,6 +51,7 @@ https://github.com/pallets-eco/flask-debugtoolbar
 The Flask Debug Toolbar requires the Flask app to have a `SECRET_KEY` value.
 You can generate a `SECRET_KEY` value with Python and should keep it not public:
 ```python-console
+$ python
 >>> import secrets
 >>> secrets.token_hex(24)
 ```
