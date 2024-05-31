@@ -1,0 +1,12 @@
+[default]
+# No default information is currently defined.
+
+[development]
+# Enable the Flask debug mode
+flask_debug = true
+extensions = ["flask_debugtoolbar:DebugToolbarExtension"]
+debug_tb_enabled = true
+
+[production]
+# Disables the Flask debug mode
+flask_debug = false

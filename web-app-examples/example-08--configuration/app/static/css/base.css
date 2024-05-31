@@ -1,0 +1,29 @@
+/* base.css corresponds to base.html and overrides some of the Bootstrap styling for the banner */
+
+/*
+Modify the Bootstrap card style to
+- remove the border,
+- make the radius 0, and
+- remove the background image clipping
+*/
+.banner.card {
+    border: 0;
+    border-radius: 0;
+    background-clip: none;
+  }
+
+/* Set the default visibility of the banner to none, or invisible */
+.banner {
+  display: none;
+}
+
+/*
+Use a CSS media query to override the .banner setting
+to be visible if the screen size is greater than 768 pixels
+*/
+@media (min-width: 768px) {
+  .banner {
+    display: block; /* Will be rendered to the display */
+    background: var(--background-url) no-repeat center center / cover; /* The CSS variable "--background-url" is defined in base.html */
+  }
+}

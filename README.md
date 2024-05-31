@@ -41,7 +41,10 @@ This results in that the page visit counters in the Python code can alternate be
 
 The configuration information is stored in TOML files
 
-## Flask Debug Toolbar: shows internal information right in the browser window
+## Flask Debug Toolbar
+
+That shows internal information right in the browser window.
+
 https://github.com/pallets-eco/flask-debugtoolbar
 
 ```unix
@@ -49,7 +52,7 @@ https://github.com/pallets-eco/flask-debugtoolbar
 ```
 
 The Flask Debug Toolbar requires the Flask app to have a `SECRET_KEY` value.
-You can generate a `SECRET_KEY` value with Python and should keep it not public:
+That can be generated using Python and should be not publicly available:
 ```python-console
 $ python
 >>> import secrets
@@ -62,10 +65,11 @@ Copy the value into `.secrets.toml` as
 secret_key="..."
 ```
 
-Because the `secret_key` is defined within the `[default]` section, its value is available 
-in any other section unless it is overridden explicitly by another `secret_key` key-value pair.
+The `secret_key` is defined within the `[default]` section.
+Its value is available in any other section unless it is overridden explicitly by another `secret_key` key-value pair.
 
-The Flask Debug Toolbar requires the creation of another TOML file, `settings.toml`.
+The Flask Debug Toolbar also requires the creation of `settings.toml`. Only the information under `[default]` and the set environment will be
+read from `settings.toml` at run time.
 
 ## Bootstrap (CSS framework)
 https://getbootstrap.com/
