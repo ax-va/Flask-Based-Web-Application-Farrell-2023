@@ -1,2 +1,2 @@
 # Secrets for the Flask Debug Toolbar
-web-app-examples/example*/.secrets.toml
+web-app-*/*/.secrets.toml
