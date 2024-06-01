@@ -39,7 +39,7 @@ This results in that the page visit counters in the Python code can alternate be
 (venv) ... $ pip install dynaconf
 ```
 
-The configuration information is stored in TOML files
+The configuration information is stored in TOML files.
 
 ## Flask Debug Toolbar
 
@@ -52,7 +52,8 @@ https://github.com/pallets-eco/flask-debugtoolbar
 ```
 
 The Flask Debug Toolbar requires the Flask app to have a `SECRET_KEY` value.
-That can be generated using Python and should be not publicly available:
+That can be generated using Python and must be not publicly available:
+
 ```python-console
 $ python
 >>> import secrets
@@ -60,13 +61,14 @@ $ python
 ```
 
 Copy the value into `.secrets.toml` as
+
 ```tolm
 [default]
 secret_key="..."
 ```
 
 The `secret_key` is defined within the `[default]` section.
-Its value is available in any other section unless it is overridden explicitly by another `secret_key` key-value pair.
+Its value is available in any other section unless it is overridden by another `secret_key` key-value pair.
 
 The Flask Debug Toolbar also requires the creation of `settings.toml`. Only the information under `[default]` and the set environment will be
 read from `settings.toml` at run time.
