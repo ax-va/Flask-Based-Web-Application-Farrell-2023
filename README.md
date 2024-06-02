@@ -9,15 +9,12 @@ To run a Flask application using Gunicorn, you need to install it in the Python 
 (venv) ... $ pip install gunicorn
 ```
 
-Run the webserver with four worker instances in a directory with `app.py`
+Run the webserver with four worker instances in a directory with `app.py` / `blog.py`
 ```unix
 $ gunicorn -w 4 app:app
-```
-or in a directory with `blog.py`
-```
 $ gunicorn -w 4 blog:app
 ```
-The first part,`app` or `blog`, corresponds to `app.py` or `blog.py`, respectively. The second part, `:app`, refers to the Flask application instance created in `app.py` or `blog.py`:
+The first part,`app` / `blog`, corresponds to `app.py` / `blog.py`, respectively. The second part, `:app`, refers to the Flask application instance created in `app.py` or `blog.py`:
 ```python
 app: Flask = ...
 ```
@@ -72,6 +69,8 @@ Its value is available in any other section unless it is overridden by another `
 
 The Flask Debug Toolbar also requires the creation of `settings.toml`. Only the information under `[default]` and the set environment will be
 read from `settings.toml` at run time.
+
+Logging levels typically used are DEBUG (=10) for development and INFO (=20) for production.
 
 ## Bootstrap (CSS framework)
 https://getbootstrap.com/
