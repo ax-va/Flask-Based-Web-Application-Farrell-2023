@@ -72,6 +72,14 @@ read from `settings.toml` at run time.
 
 Logging levels typically used are DEBUG (=10) for development and INFO (=20) for production.
 
+## Flask sessions
+
+Flask uses the `SECRET_KEY` to sign the session cookie.
+The `SECRET_KEY` must be cryptographically strong and kept private on the server side.
+That cookie is saved in the client's browser and cannot be modified by the client.
+By default, session cookies exist until the client browser is closed that can be changed using Python `datetime
+.timedelta()`.
+
 ## Bootstrap (CSS framework)
 https://getbootstrap.com/
 
