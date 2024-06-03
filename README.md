@@ -16,7 +16,7 @@ $ gunicorn -w 4 app:app
 ```unix
 $ gunicorn -w 4 blog:app
 ```
-The first part, `app` / `blog`, corresponds to 'app.py' / 'blog.py', respectively. The second part, `:app`, refers to the Flask application instance created in `app.py` or `blog.py`:
+The first part, `app` / `blog`, corresponds to 'app.py' / 'blog.py', respectively. The second part, `:app`, refers to the Flask application instance created in 'app.py' or 'blog.py':
 ```python
 app: Flask = ...
 ```
