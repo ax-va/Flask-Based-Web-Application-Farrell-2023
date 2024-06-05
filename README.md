@@ -87,7 +87,8 @@ The user information can be stored on the server side and retrieved using the se
 
 https://getbootstrap.com/
 
-## JSDELIVR (a free CDN for open source projects)
+## JSDELIVR 
+A free CDN for open source projects
 
 https://www.jsdelivr.com/
 
