@@ -77,12 +77,26 @@ Logging levels typically used are DEBUG (=10) for development and INFO (=20) for
 Flask uses the `SECRET_KEY` to sign the session cookie.
 The `SECRET_KEY` must be cryptographically strong and kept private on the server side.
 That cookie is saved in the client's browser and cannot be modified by the client.
-By default, session cookies exist until the client browser is closed that can be changed using Python `datetime
-.timedelta()`.
+
+By default, session cookies exist until the client browser is closed that can be changed using Python `datetime.timedelta()`. 
+The user information can be stored on the server side and retrieved using the session cookie's unique user identifier.
 
 ## Bootstrap (CSS framework)
+
 https://getbootstrap.com/
 
 ## JSDELIVR (a free CDN for open source projects)
+
 https://www.jsdelivr.com/
 
+## Flask-Login
+A Flask extension to provide application session management abilities and tools to log users in and out and handle the "remember me" functionality.
+
+https://pypi.org/project/Flask-Login/
+
+## Flask-Bcrypt
+A Flask extension to hash the passwords stored on the server
+
+https://pypi.org/project/Flask-Bcrypt/
+
+https://snyk.io/advisor/python/flask-bcrypt
