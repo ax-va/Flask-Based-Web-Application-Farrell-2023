@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="login-wrapper mx-auto mt-3">
+    <div class="container login">
+        <div class="card">
+            <h5 class="card-header">Login</h5>
+            <div class="card-body">
+                <div class="card-text">
+                    <form action='login' method='POST'>
+                        <input type='text' name='email' id='email' placeholder='email'/>
+                        <input type='password' name='password' id='password' placeholder='password'/>
+                        <input type='submit' name='submit'/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/login.css') }}" />
+{% endblock %}

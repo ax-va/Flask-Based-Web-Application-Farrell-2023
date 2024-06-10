@@ -1,30 +1,50 @@
 import logging
 import logging.config
 import os
-from pathlib import Path
-
 import yaml
+from pathlib import Path
 from dynaconf import FlaskDynaconf
-from flask import Flask
+from flask import Flask, send_from_directory
+from flask_login import LoginManager  # to handle user authentication
+
+# Create an uninitialized LoginManager instance
+login_manager = LoginManager()
+# Point the LoginManager instance to the Blueprint view
+login_manager.login_view = "auth_bp.login"
 
 
 def create_app() -> Flask:
     """ This application factory creates the Flask app instance with the application context """
     app = Flask(__name__)
     dynaconf = FlaskDynaconf(extensions_list=True)
+
     with app.app_context():
+        # Create a route to the favicon.ico file
+        @app.route('/favicon.ico')
+        def favicon():
+            return send_from_directory(
+                os.path.join(app.root_path, 'static', 'images'),
+                'favicon.ico',
+                mimetype="image/vnd.microsoft.icon"
+            )
         # Inform dynaconf where to look for configuration *.toml files
         os.environ["ROOT_PATH_FOR_DYNACONF"] = app.root_path
         # Configure the Flask app based on the dynaconf-read configuration files
         dynaconf.init_app(app)
         # Translate the SECRET_KEY string into a bytearray as recommended by the Flask documentation
-        app.config["SECRET_KEY"] = bytearray(app.config["SECRET_KEY"], "UTF-8")
+        # app.config["SECRET_KEY"] = bytearray(app.config["SECRET_KEY"], "UTF-8")
+        # Initialize the login manager
+        login_manager.init_app(app)
         # Configure logging for the application
         _configure_logging(app, dynaconf)
-        # Import the "intro" package, which contains the "intro_bp" instance
+
+        # Import the routes
         from . import intro
-        # Register intro.intro_bp with app
+        from . import auth
+
+        # Register the blueprints
         app.register_blueprint(intro.intro_bp)
+        app.register_blueprint(auth.auth_bp)
 
     return app
 

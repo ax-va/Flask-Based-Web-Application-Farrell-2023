@@ -4,8 +4,8 @@ import os
 from pathlib import Path
 
 import yaml
-from flask import Flask, send_from_directory
 from dynaconf import FlaskDynaconf
+from flask import Flask, send_from_directory
 
 
 def create_app() -> Flask:
@@ -24,7 +24,7 @@ def create_app() -> Flask:
             )
         # Inform dynaconf where to look for configuration *.toml files
         os.environ["ROOT_PATH_FOR_DYNACONF"] = app.root_path
-        # Configure the Flask app_ based on the dynaconf-read configuration files
+        # Configure the Flask app based on the dynaconf-read configuration files
         dynaconf.init_app(app)
         # Translate the SECRET_KEY string into a bytearray as recommended by the Flask documentation
         app.config["SECRET_KEY"] = bytearray(app.config["SECRET_KEY"], "UTF-8")
