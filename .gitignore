@@ -1,2 +1,2 @@
-# Secrets for the Flask Debug Toolbar
+# Flask SECRET_KEY
 web-app-*/*/.secrets.toml
