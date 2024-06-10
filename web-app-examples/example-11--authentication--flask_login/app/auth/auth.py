@@ -1,5 +1,4 @@
 from logging import getLogger
-from urllib.parse import urlparse
 
 from flask import redirect, url_for, request, render_template
 from flask_login import login_user, login_required, logout_user, current_user
