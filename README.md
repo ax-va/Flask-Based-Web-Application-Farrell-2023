@@ -97,9 +97,14 @@ A Flask extension to provide application session management abilities and tools 
 
 https://pypi.org/project/Flask-Login/
 
+https://flask-login.readthedocs.io/en/latest/
+
 ## Flask-Bcrypt
-A Flask extension to hash the passwords stored on the server
+A Flask extension to hash the passwords stored on the server. 
+Plain-text passwords should never be stored in a database and should always be cryptographically hashed first.
 
 https://pypi.org/project/Flask-Bcrypt/
 
 https://snyk.io/advisor/python/flask-bcrypt
+
+https://pypi.org/project/bcrypt/

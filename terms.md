@@ -4,6 +4,10 @@
 
 **favicon = a graphic image used as a shortcut to represent a website**
 
+**ORM = Object-Relational Mapping** 
+
+**toasts = lightweight alert messages that "float" above the content**
+
 **TOML = Tom's Obvious, Minimal Language**
 
 Tom's Obvious, Minimal Language (TOML) is a file format for configuration files.
@@ -11,6 +15,8 @@ It is intended to be easy to read and write due to obvious semantics which aim t
 and it is designed to map unambiguously to a dictionary. 
 Originally created by Tom Preston-Werner, its specification is open source. 
 (Wikipedia)
+
+**UUID = Universally Unique Identifier**
 
 **WSGI = Web Server Gateway Interface: a WSGI standard for a server that provides a simple calling convention to forward requests from a web server to a Python web application.**
 
