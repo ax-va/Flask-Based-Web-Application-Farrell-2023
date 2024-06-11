@@ -29,7 +29,7 @@ def login():
 
     user = User(request.form['email'])
     # Verify user ID and password
-    if user in users_db and user.verify_password(request.form['password']):
+    if user.id in users_db and user.verify_password(request.form['password']):
         login_user(user)
         logger.debug("Logged in successfully.")
         return redirect(url_for("auth_bp.protected"))
