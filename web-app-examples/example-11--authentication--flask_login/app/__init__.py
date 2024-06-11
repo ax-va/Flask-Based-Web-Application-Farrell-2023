@@ -12,6 +12,9 @@ login_manager = LoginManager()
 # Point the LoginManager instance to the Blueprint view
 login_manager.login_view = "auth_bp.login"
 
+# Mock database
+users_db = {'ax-va@some-company.com': {'password': 'secret'}}
+
 
 def create_app() -> Flask:
     """ This application factory creates the Flask app instance with the application context """

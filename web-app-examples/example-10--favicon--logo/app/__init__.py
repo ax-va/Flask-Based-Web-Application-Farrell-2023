@@ -26,8 +26,6 @@ def create_app() -> Flask:
         os.environ["ROOT_PATH_FOR_DYNACONF"] = app.root_path
         # Configure the Flask app based on the dynaconf-read configuration files
         dynaconf.init_app(app)
-        # Translate the SECRET_KEY string into a bytearray as recommended by the Flask documentation
-        app.config["SECRET_KEY"] = bytearray(app.config["SECRET_KEY"], "UTF-8")
         # Configure logging for the application
         _configure_logging(app, dynaconf)
         # Import the "intro" package, which contains the "intro_bp" instance

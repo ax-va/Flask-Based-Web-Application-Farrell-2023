@@ -5,22 +5,18 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 from . import auth_bp
 from ..models import User
-from .. import login_manager
+from .. import login_manager, users_db
 
 logger = getLogger(__name__)
-
-# Mock database
-users = {'ax-va@some-company.com': {'password': 'secret'}}
 
 
 @login_manager.user_loader
 def user_loader(user_id):
     """ Called every time the login_manager needs to determine if the user exists """
-    if user_id not in users:
+    if user_id not in users_db:
         return
 
-    user = User()
-    user.id = user_id
+    user = User(user_id)
     return user
 
 
@@ -31,10 +27,9 @@ def login():
     if request.method == 'GET':
         return render_template("login.html")
 
-    user = User()
-    user.id = request.form['email']
+    user = User(request.form['email'])
     # Verify user ID and password
-    if user.id in users and users[user.id]['password'] == request.form['password']:
+    if user in users_db and user.verify_password(request.form['password']):
         login_user(user)
         logger.debug("Logged in successfully.")
         return redirect(url_for("auth_bp.protected"))
