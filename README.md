@@ -69,7 +69,7 @@ secret_key="..."
 
 Add `.secrets.toml` to `.gitignore`.
 
-The Flask setting can be written in `settings.toml`. Only the information under `[default]` and the given environment will be read from `settings.toml` at run time.
+The Flask setting can be written in `settings.toml`. Only the information under `[default]` and the set environment will be read from `settings.toml` at run time.
 
 In the settings, logging levels typically used are `DEBUG` (=10) for development and `INFO` (=20) for production.
 
