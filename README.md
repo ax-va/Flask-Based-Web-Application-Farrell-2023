@@ -67,7 +67,7 @@ Copy the value into `.secrets.toml` as
 secret_key="..."
 ```
 
-The `secret_key` is defined within the `[default]` section.
+Add `.secrets.toml` to `.gitignore`.
 
 The Flask setting can be written in `settings.toml`. Only the information under `[default]` and the given environment will be read from `settings.toml` at run time.
 
