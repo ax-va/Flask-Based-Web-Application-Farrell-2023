@@ -52,7 +52,7 @@ https://github.com/pallets-eco/flask-debugtoolbar
 ## Flask settings
 
 The Flask `app` must usually store a `SECRET_KEY` value.
-That can be generated using Python and must be not publicly available:
+That can be generated using Python and must be **not publicly** available:
 
 ```python-console
 $ python
