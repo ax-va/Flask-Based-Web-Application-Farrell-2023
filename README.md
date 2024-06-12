@@ -49,7 +49,9 @@ https://github.com/pallets-eco/flask-debugtoolbar
 (venv) ... $ pip install flask-debugtoolbar
 ```
 
-The Flask Debug Toolbar requires the Flask app to have a `SECRET_KEY` value.
+## Flask settings
+
+The Flask `app` can store and use a `SECRET_KEY` value.
 That can be generated using Python and must be not publicly available:
 
 ```python-console
@@ -66,12 +68,10 @@ secret_key="..."
 ```
 
 The `secret_key` is defined within the `[default]` section.
-Its value is available in any other section unless it is overridden by another `secret_key` key-value pair.
 
-The Flask Debug Toolbar also requires the creation of `settings.toml`. Only the information under `[default]` and the set environment will be
-read from `settings.toml` at run time.
+The Flask can also use `settings.toml`. Only the information under `[default]` and the given environment will be read from `settings.toml` at run time.
 
-Logging levels typically used are DEBUG (=10) for development and INFO (=20) for production.
+In the settings, logging levels typically used are `DEBUG` (=10) for development and `INFO` (=20) for production.
 
 ## Flask sessions
 
