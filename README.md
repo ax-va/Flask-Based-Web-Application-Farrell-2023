@@ -9,14 +9,13 @@ To run a Flask application using Gunicorn, you need to install it in the Python 
 (venv) ... $ pip install gunicorn
 ```
 
-Run the webserver with four worker instances in a directory with 'app.py' / 'blog.py'
+Run the webserver with four worker instances in a directory with 'xyz.py'
 ```unix
-$ gunicorn -w 4 app:app
+$ gunicorn -w 4 xyz:app
 ```
-```unix
-$ gunicorn -w 4 blog:app
-```
-The first part, `app` / `blog`, corresponds to 'app.py' / 'blog.py', respectively. The second part, `:app`, refers to the Flask application instance created in 'app.py' or 'blog.py':
+
+
+The first part, `xyz`, corresponds to 'xyz.py'. The second part, `:app`, refers to the Flask application instance created in 'xyz.py':
 ```python
 app: Flask = ...
 ```
