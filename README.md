@@ -15,7 +15,7 @@ $ gunicorn -w 4 xyz:app
 ```
 
 
-The first part, `xyz`, corresponds to 'xyz.py'. The second part, `:app`, refers to the Flask application instance `app` created in 'xyz.py':
+The first part, `xyz`, is the name of 'xyz.py'. The second part, `:app`, refers to the Flask application instance `app` created in 'xyz.py':
 ```python
 app: Flask = ...
 ```
