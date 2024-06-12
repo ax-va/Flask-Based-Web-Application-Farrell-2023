@@ -51,7 +51,7 @@ https://github.com/pallets-eco/flask-debugtoolbar
 
 ## Flask settings
 
-The Flask `app` can store and use a `SECRET_KEY` value.
+The Flask `app` must usually store a `SECRET_KEY` value.
 That can be generated using Python and must be not publicly available:
 
 ```python-console
@@ -69,7 +69,7 @@ secret_key="..."
 
 The `secret_key` is defined within the `[default]` section.
 
-The Flask can also use `settings.toml`. Only the information under `[default]` and the given environment will be read from `settings.toml` at run time.
+The Flask setting can be written in `settings.toml`. Only the information under `[default]` and the given environment will be read from `settings.toml` at run time.
 
 In the settings, logging levels typically used are `DEBUG` (=10) for development and `INFO` (=20) for production.
 
