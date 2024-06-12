@@ -79,7 +79,7 @@ Flask uses the `SECRET_KEY` to sign the session cookie.
 The `SECRET_KEY` must be cryptographically strong and kept private on the server side.
 That cookie is saved in the client's browser and cannot be modified by the client.
 
-By default, session cookies exist until the client browser is closed that can be changed using Python `datetime.timedelta()`. 
+By default, session cookies exist until the client browser is closed but that livetime can be changed. 
 The user information can be stored on the server side and retrieved using the session cookie's unique user identifier.
 
 ## Bootstrap (CSS framework)
