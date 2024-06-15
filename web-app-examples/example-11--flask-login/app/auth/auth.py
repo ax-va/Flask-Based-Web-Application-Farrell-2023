@@ -11,7 +11,7 @@ logger = getLogger(__name__)
 
 
 @login_manager.user_loader
-def user_loader(user_id):
+def load_user(user_id):
     """ Called every time the login_manager needs to determine if the user exists """
     if user_id not in users_db:
         return
