@@ -98,6 +98,11 @@ https://pypi.org/project/Flask-Login/
 
 https://flask-login.readthedocs.io/en/latest/
 
+## Flask-WTF
+Simple integration of Flask and WTForms, including CSRF, file upload, and reCAPTCHA.
+
+https://pypi.org/project/Flask-WTF/
+
 ## Flask-Bcrypt
 A Flask extension to hash the passwords stored on the server. 
 Plain-text passwords should never be stored in a database and should always be cryptographically hashed first.
