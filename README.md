@@ -99,7 +99,7 @@ https://pypi.org/project/Flask-Login/
 https://flask-login.readthedocs.io/en/latest/
 
 ## Flask-WTF
-Simple integration of Flask and WTForms, including CSRF, file upload, and reCAPTCHA.
+Simple integration of Flask and WTForms, including cross-site request forgery (CSRF) protection, file upload, and reCAPTCHA.
 
 https://pypi.org/project/Flask-WTF/
 
