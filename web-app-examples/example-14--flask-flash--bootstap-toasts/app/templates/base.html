@@ -72,8 +72,8 @@
     </nav>
     <!-- Creates the content section enclosing style, which is provided by child templates -->
     <main class="flex-shrink-0">
-        {% block content %}{% endblock %}
         {{ macros.flask_flash_messages() }}
+        {% block content %}{% endblock %}
     </main>
     <!-- Creates the Bootstrap footer that sticks to the bottom of the page -->
     <footer class="footer fixed-bottom py-1 bg-light">
