@@ -1,0 +1,39 @@
+<!-- Child template -->
+{% extends "base.html" %} <!-- "index.html" is inheriting "base.html" -->
+
+{% block content %} <!-- Replaces the empty "block content" from the parent template -->
+    <div class="container-fluid">
+        <div class="card bg-warning mb-3 font-weight-bold" style="margin-top: 10px;">
+            <div class="card-body">
+                Current time: {{ data["now"] }}
+            </div>
+        </div>
+        <p>Page visits: {{ data["page_visit"].increment_visits() }}</p>
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                List of available banner colors
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for banner_color in data["banner_colors"] %} <!-- Mimics the Python for-in statement -->
+                <li class="list-group-item">{{ banner_color }}</li> <!-- list item -->
+                {% endfor %} <!-- the end of the "for-in" block -->
+            </ul>
+        </div>
+        <br/>
+        <button id="change-banner-color" type="button" class="btn btn-primary">
+            Change Banner Color
+        </button>
+    </div>
+{% endblock %} <!-- "block content" -->
+
+{% block scripts %} <!-- "block scripts" -->
+{{ super() }} <!-- Renders the parent scripts block - it is nothing currently -->
+<script>
+    // "bannerColors" is initialized with the JSON formatted string.
+    // "| safe" prevents Jinja2 from translating symbols:
+    // the data could contain information that might be an XSS attack.
+    const bannerColors = {{ data["banner_colors"] | tojson | safe }};
+</script>
+<!-- The dot . in ".static" means the path to the "static" directory relative to the "intro_bp" Blueprint -->
+<script src="{{ url_for('.static', filename='js/index.js') }}"></script> <!-- Creates a valid relative URL -->
+{% endblock %} <!-- "block scripts" -->

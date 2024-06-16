@@ -1,0 +1,11 @@
+{#
+    This macro outputs any form errors and should be
+    placed under a form control in the html
+#}
+{% macro validation_errors(errors) %}
+    {% if errors %}
+        {% for error in errors %}
+            <div class="text-danger small">{{error}}</div>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
