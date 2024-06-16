@@ -37,13 +37,13 @@ def login():
 
     if form.validate_on_submit():
         # HTTP POST
-        user = User(request.form['email'])
+        user = User(form.email.data)
         # Verify user ID and password
-        if user.id not in users_db or not user.verify_password(request.form['password']):
+        if user.id not in users_db or not user.verify_password(form.password.data):
             logger.debug("Invalid email or password.")
             return redirect(url_for("auth_bp.login"))
 
-        login_user(user)
+        login_user(user, remember=form.remember_me.data)
         logger.debug("Logged in successfully.")
         return redirect(url_for("auth_bp.protected"))
 
