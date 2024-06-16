@@ -9,7 +9,7 @@ class User(UserMixin):
 
     @property
     def user_info(self):
-        return f"user_id: {self.id}\n"
+        return f"user_id: {self.id}"
 
     def verify_password(self, password):
         return users_db[self.id]['password'] == password
