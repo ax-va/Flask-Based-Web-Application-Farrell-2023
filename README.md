@@ -15,7 +15,7 @@ $ gunicorn -w 4 xyz:app
 ```
 
 
-The first part, `xyz`, corresponds to the name of some 'xyz.py' script that is an entry point to the Flask application. Here, `xyz` is either `blog` or `app` depending on which example you have opened. The second part, `:app`, refers to the Flask application instance `app` created in 'xyz.py':
+The first part, `xyz`, corresponds to the name of some 'xyz.py' script that is an entry point to the Flask application. Here, `xyz` is either `blog` or `app` depending on which example you have opened. The second part, `:app`, refers to the Flask application instance `app` created in the 'xyz.py' entry point:
 ```python
 app: Flask = ...
 ```
