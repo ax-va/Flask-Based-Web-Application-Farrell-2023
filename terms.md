@@ -1,3 +1,7 @@
+**Bootstrap toasts = lightweight alert messages**
+
+Toasts "float" above the content and disappear soon after the message is presented.
+
 **CDN = content delivery network**
 
 **CSRF = cross-site request forgery**
@@ -8,9 +12,7 @@ CSRF exploits the trust that a site has in a user's browser.
 
 **favicon = a graphic image used as a shortcut to represent a website**
 
-**ORM = object-relational mapping** 
-
-**toasts = lightweight alert messages that "float" above the content**
+**ORM = object-relational mapping**
 
 **TOML = Tom's obvious, minimal language**
 
