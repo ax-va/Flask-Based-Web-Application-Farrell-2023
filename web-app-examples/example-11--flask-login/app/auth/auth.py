@@ -34,7 +34,7 @@ def login():
         logger.debug("Logged in successfully.")
         return redirect(url_for("auth_bp.protected"))
 
-    logger.debug("Bad login.")
+    logger.debug("Invalid email or password.")
     return redirect(url_for("auth_bp.login"))
 
 

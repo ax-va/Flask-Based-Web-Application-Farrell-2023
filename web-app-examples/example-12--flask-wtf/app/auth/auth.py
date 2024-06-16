@@ -33,16 +33,19 @@ def login():
     form = LoginForm()
 
     if form.cancel.data:
-        return redirect(url_for("auth_bp.protected"))
+        return redirect(url_for("auth_bp.login"))
 
     if form.validate_on_submit():
         # HTTP POST
         user = User(request.form['email'])
         # Verify user ID and password
-        if user.id in users_db and user.verify_password(request.form['password']):
-            login_user(user)
-            logger.debug("Logged in successfully.")
-            return redirect(url_for("auth_bp.protected"))
+        if user.id not in users_db or not user.verify_password(request.form['password']):
+            logger.debug("Invalid email or password.")
+            return redirect(url_for("auth_bp.login"))
+
+        login_user(user)
+        logger.debug("Logged in successfully.")
+        return redirect(url_for("auth_bp.protected"))
 
     # HTTP GET
     return render_template("login.html", form=form)
