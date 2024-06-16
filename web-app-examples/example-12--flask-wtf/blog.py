@@ -45,3 +45,5 @@ $ flask run
 """
 
 # To don't log the DEBUG messages, set "FLASK_ENV=production" instead of "FLASK_ENV=development".
+
+# Use "/logout" to log out.
