@@ -6,9 +6,7 @@ from pathlib import Path
 import yaml
 from dynaconf import FlaskDynaconf
 from flask import Flask, send_from_directory
-from flask_bcrypt import Bcrypt  # to cryptographically encrypt user passwords
 from flask_login import LoginManager  # to handle user authentication
-from flask_sqlalchemy import SQLAlchemy  # to manage the data persistence
 
 # Create an uninitialized LoginManager instance
 login_manager = LoginManager()
