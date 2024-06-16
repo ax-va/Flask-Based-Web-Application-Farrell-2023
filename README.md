@@ -1,6 +1,6 @@
 # Python-Web-Application-Farrell-2023
 
-## WSGI
+## WSGI = Web Server Gateway Interface
 
 Two of the most common production-ready high-performance WSGI servers are uWSGI and Gunicorn (short for Green Unicorn).
 
