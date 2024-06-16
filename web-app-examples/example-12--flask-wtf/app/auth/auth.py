@@ -1,3 +1,4 @@
+""" Authentication """
 from logging import getLogger
 
 from flask import redirect, url_for, render_template

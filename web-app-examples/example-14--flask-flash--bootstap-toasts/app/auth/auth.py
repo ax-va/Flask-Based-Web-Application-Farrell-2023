@@ -1,3 +1,4 @@
+""" Authentication """
 from logging import getLogger
 from urllib.parse import urlparse
 
