@@ -43,7 +43,7 @@ def login():
             logger.debug("Invalid email or password.")
             return redirect(url_for("auth_bp.login"))
 
-        login_user(user, remember=form.remember_me.data)
+        login_user(user, remember=form.remember_me.data)  # Remember the logged-in user between the browser sessions
         logger.debug("Logged in successfully.")
         return redirect(url_for("auth_bp.protected"))
 

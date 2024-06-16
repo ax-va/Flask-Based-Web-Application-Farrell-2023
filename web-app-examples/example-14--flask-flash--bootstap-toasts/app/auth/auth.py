@@ -47,7 +47,7 @@ def login():
             flash("Invalid email or password", "warning")
             return redirect(url_for("auth_bp.login"))
 
-        login_user(user, remember=form.remember_me.data)
+        login_user(user, remember=form.remember_me.data)  # Remember the logged-in user between the browser sessions
         logger.debug("Logged in successfully.")
         next_ = request.args.get("next")
         if not next_ or urlparse(next_).netloc != "":
