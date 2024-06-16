@@ -2,6 +2,7 @@ from flask import Flask
 from app import create_app
 
 app: Flask = create_app()
+app.logger.info("AlexBlog is running")
 
 # Open the directory in the terminal.
 # Enter on Mac / Unix:
