@@ -41,9 +41,6 @@ def login():
         # Verify user ID and password
         if user.id not in users_db or not user.verify_password(request.form['password']):
             logger.debug("Invalid email or password.")
-            # The message is appended to a list of messages available in the context of the only next request.
-            # Flash messages available to the next rendered template.
-            flash("Invalid email or password", "warning")
             return redirect(url_for("auth_bp.login"))
 
         login_user(user)
