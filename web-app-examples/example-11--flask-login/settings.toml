@@ -8,10 +8,8 @@ extensions = ["flask_debugtoolbar:DebugToolbarExtension"]
 debug_tb_enabled = true
 debug_tb_intercept_redirects = false
 logging_level = "DEBUG"
-sqlalchemy_echo = false
 
 [production]
 # Disables the Flask debug mode
 flask_debug = false
 logging_level = "INFO"
-sqlalchemy_echo = false
