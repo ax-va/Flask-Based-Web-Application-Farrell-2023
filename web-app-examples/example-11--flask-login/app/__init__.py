@@ -13,7 +13,7 @@ login_manager = LoginManager()
 login_manager.login_view = "auth_bp.login"
 
 # Mock database
-users_db = {'ax-va@some-company.com': {'password': 'secret'}}
+users_db = {'ax-va@email.com': {'password': 'secret'}}
 
 
 def create_app() -> Flask:

@@ -7,7 +7,8 @@ from wtforms.validators import DataRequired, Email, Length
 
 class LoginForm(FlaskForm):
     """
-    Defines the WTForm class for the login page inheriting from the base FlaskForm class.
+    Defines the WTForm class inheriting from the base FlaskForm class,
+    an instance of which is passed to the login template.
     """
     # Create the email form element and validators
     email = EmailField(

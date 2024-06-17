@@ -17,7 +17,15 @@ login_manager.login_view = "auth_bp.login"
 bcrypt = Bcrypt()
 
 # Mock database
-users_db = {'ax-va@email.com': {'password': 'secret'}}
+users_db = {
+    'ax-va@email.com':
+        {
+            'first_name': 'Alex',
+            'last_name': 'Vasiliev',
+            'email': 'ax-va@email.com',
+            'password': 'secret'
+        }
+}
 
 
 def create_app() -> Flask:

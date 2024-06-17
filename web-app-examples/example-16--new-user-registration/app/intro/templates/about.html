@@ -1,0 +1,28 @@
+<!-- Child template -->
+{% extends "base.html" %} <!-- "index.html" is inheriting "base.html" -->
+
+{% block content %} <!-- Replaces the empty "block content" from the parent template -->
+    <div class="container-fluid mt-3">
+        <div class="card">
+            <div class="card-header">
+                About
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Information about this website</h5>
+                <p class="card-text">
+                    This is an implementation of the AlexBlog blogging
+                    web application based on the book "The Well-Grounded
+                    Python Developer: How the pros use Python and Flask"
+                    by Doug Farrell published by Manning Publications in 2023.
+                </p>
+                <p class=”card-text”>
+                    The intent of the application is not to create a complete
+                    and fully feature blogging system, there are many of those
+                    in existence already. The goal is to progressively see
+                    and learn how to implement the big picture that's necessary
+                    to implement a complex system like this.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

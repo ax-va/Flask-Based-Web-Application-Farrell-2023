@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% import "macros.jinja" as macros %}
+
+{% block content %}
+<div class="login-wrapper mx-auto mt-3">
+    <div class="container login">
+        <form method="POST" novalidate>
+            <div class="card">
+                <h5 class="card-header">
+                    User Login
+                </h5>
+                <div class="card-body">
+                    <div class="card-text">
+                        <!-- Cross-Site Request Forgery (CSRF) protection token -->
+                        {{ form.csrf_token }}
+                        <!-- Create the email element on the page, passing the element Bootstrap class information -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope fs-4"></i>
+                            </span>
+                            <div class="form-floating form-floating-group flex-grow-1">
+                                {{ form.email(class_="form-control") }}
+                                {{ form.email.label(class_="form-label") }}
+                            </div>
+                        </div>
+                        <!--
+                        Use a Jinja macro in the app/templates/macros.jinja file to handle displaying any
+                        LoginForm validation errors to the user in small red text below the form field.
+                        The validation_errors() macro receives a list of LoginForm validation errors.
+                        -->
+                        {{ macros.validation_errors(form.email.errors) }}
+                        <!-- Create the password element on the page, passing the element Bootstrap class information -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-key fs-4"></i>
+                            </span>
+                            <div class="form-floating form-floating-group flex-grow-1">
+                                {{ form.password(class_="form-control") }}
+                                {{ form.password.label(class_="form-label") }}
+                            </div>
+                        </div>
+                        <!--
+                        Use a Jinja macro in the app/templates/macros.jinja file to handle displaying any
+                        LoginForm validation errors to the user in small red text below the form field.
+                        The validation_errors() macro receives a list of LoginForm validation errors.
+                        -->
+                        {{ macros.validation_errors(form.password.errors) }}
+                        <!-- Create the "remember_me" element on the page, passing the element Bootstrap class information -->
+                        <div class="mb-3">
+                            {{ form.remember_me }}
+                            {{ form.remember_me.label(class_="form-check-label") }}
+                        </div>
+                    </div>
+                </div>
+                <!-- Create the "Log In" and "Cancel" button elements on the page, passing the element Bootstrap class information -->
+                <div class="card-footer text-end">
+                    {{ form.login(class_="btn btn-primary me-2") }}
+                    {{ form.register(class_="btn btn-primary me-2") }}
+                    {{ form.cancel(class="btn btn-warning") }}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/login.css') }}" />
+{% endblock %}
