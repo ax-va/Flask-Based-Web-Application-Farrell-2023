@@ -79,18 +79,17 @@ def register_new_user():
         # HTTP POST
         with db_session_manager() as db_session:
             # Create a new user initializing the attributes with form data
-            user = User(
-                first_name=form.first_name.data,
-                last_name=form.last_name.data,
-                email=form.email.data,
-                password=form.password.data,
-            )
+            user = User()
+            user.first_name = form.first_name.data
+            user.last_name = form.last_name.data
+            user.email = form.email.data
+            user.password = form.password.data
             # Add the newly created user to the mocked database
             db_session.add(user)
             # Commit adding user
             db_session.commit()
             # Log debug message
-            logger.debug(f"New user {form.email.data} added.")
+            logger.debug(f"New user '{form.email.data}' added.")
             # Redirect to the login page
             return redirect(url_for("auth_bp.login"))
     # HTTP GET
@@ -100,7 +99,7 @@ def register_new_user():
 @auth_bp.route('/protected')
 @login_required
 def protected():
-    logger.debug(f"Logged in as '{current_user.id}'")
+    logger.debug(f"Logged in as '{current_user.email}'")
     return redirect(url_for("intro_bp.home"))
 
 

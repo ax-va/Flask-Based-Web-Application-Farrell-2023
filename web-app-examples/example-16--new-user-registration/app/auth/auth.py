@@ -84,7 +84,7 @@ def register_new_user():
         )
         # Add the newly created user to the mocked database
         user.add_to_db()
-        logger.debug(f"New user {form.email.data} added.")
+        logger.debug(f"New user '{form.email.data}' added.")
         # Redirect to the login page
         return redirect(url_for("auth_bp.login"))
     # HTTP GET
@@ -94,7 +94,7 @@ def register_new_user():
 @auth_bp.route('/protected')
 @login_required
 def protected():
-    logger.debug(f"Logged in as '{current_user.id}'")
+    logger.debug(f"Logged in as '{current_user.email}'")
     return redirect(url_for("intro_bp.home"))
 
 
