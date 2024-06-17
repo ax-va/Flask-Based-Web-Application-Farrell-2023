@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, BooleanField, SubmitField
+from wtforms import BooleanField, PasswordField, SubmitField
 from wtforms.fields.simple import EmailField
 # field validation classes used to validate the form elements
 from wtforms.validators import DataRequired, Length, Email
