@@ -5,16 +5,23 @@ from . import users_db
 
 class User(UserMixin):
     def __init__(self, **kwargs):
-        if 'user_id' in kwargs and kwargs['user_id'] in users_db:
-            # Load user data from the mocked database
+        if 'user_id' in kwargs:
+            # Logging in the user
             self.id = kwargs['user_id']
-            self.first_name = users_db[self.id]['first_name']
-            self.last_name = users_db[self.id]['last_name']
-            self.email = users_db[self.id]['email']
-            # Load the hashed password from the mocked database
-            self.hashed_password = users_db[self.id]['hashed_password']
+            if kwargs['user_id'] in users_db:
+                # Load user data from the mocked database
+                self.first_name = users_db[self.id]['first_name']
+                self.last_name = users_db[self.id]['last_name']
+                self.email = users_db[self.id]['email']
+                self.hashed_password = users_db[self.id]['hashed_password']
+            else:
+                # User does not exist in the mocked database
+                self.first_name = None
+                self.last_name = None
+                self.email = None
+                self.hashed_password = None
         else:
-            # Create user
+            # Create user with data needed to register a new user
             if (
                     kwargs is None
                     or ('first_name' not in kwargs)

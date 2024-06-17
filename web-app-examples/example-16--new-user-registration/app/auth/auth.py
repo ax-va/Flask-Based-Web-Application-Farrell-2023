@@ -103,6 +103,7 @@ def protected():
 def logout():
     logout_user()
     logger.debug("Logged out")
+    flash("You've been logged out", "light")
     return redirect(url_for('auth_bp.login'))
 
 
