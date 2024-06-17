@@ -32,7 +32,6 @@ def login():
     logger.debug("Logging in...")
 
     form = LoginForm()
-
     if form.cancel.data:
         return redirect(url_for("auth_bp.login"))
 
