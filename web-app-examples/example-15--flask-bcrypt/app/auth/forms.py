@@ -2,12 +2,12 @@ from flask_wtf import FlaskForm
 from wtforms import BooleanField, PasswordField, SubmitField
 from wtforms.fields.simple import EmailField
 # field validation classes used to validate the form elements
-from wtforms.validators import DataRequired, Length, Email
+from wtforms.validators import DataRequired, Email, Length
 
 
 class LoginForm(FlaskForm):
     """
-    Creates the LoginForm inheriting from the base FlaskForm class.
+    Defines the WTForm class for the login page inheriting from the base FlaskForm class.
     """
     # Create the email form element and validators
     email = EmailField(
