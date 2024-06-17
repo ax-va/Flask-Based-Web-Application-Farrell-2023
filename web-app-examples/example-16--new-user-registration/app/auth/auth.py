@@ -54,7 +54,7 @@ def login():
         logger.debug("Logged in successfully.")
         next_ = request.args.get("next")
         if not next_ or urlparse(next_).netloc != "":
-            next_ = url_for("intro_bp.home")
+            next_ = url_for("auth_bp.protected")
         return redirect(next_)
 
     # HTTP GET
@@ -67,7 +67,7 @@ def register_new_user():
     """ Handles HTTP GET and HTTP POST requests to register a new user """
     # If the user is already authenticated, redirect them to the homepage
     if current_user.is_authenticated:
-        return redirect(url_for("intro_bp.home"))
+        return redirect(url_for("auth_bp.protected"))
 
     form = RegisterNewUserForm()
     if form.cancel.data:

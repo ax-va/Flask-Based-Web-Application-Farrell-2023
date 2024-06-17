@@ -51,7 +51,7 @@ def login():
         logger.debug("Logged in successfully.")
         next_ = request.args.get("next")
         if not next_ or urlparse(next_).netloc != "":
-            next_ = url_for("intro_bp.home")
+            next_ = url_for("auth_bp.protected")
         return redirect(next_)
 
     # HTTP GET
