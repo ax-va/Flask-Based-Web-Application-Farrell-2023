@@ -56,7 +56,7 @@ class LoginForm(FlaskForm):
         render_kw={"tabindex": 4},
     )
     register = SubmitField(
-        "Register Now",
+        "Register",
         render_kw={"tabindex": 5},
     )
     # Create the form Cancel button
