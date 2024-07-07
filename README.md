@@ -1,4 +1,4 @@
-# Python-Web-Application-Farrell-2023
+# Flask-Web-Application-Farrell-2023
 
 ## WSGI = Web Server Gateway Interface
 
