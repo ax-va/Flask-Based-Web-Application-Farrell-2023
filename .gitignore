@@ -1,2 +1,2 @@
 # Flask SECRET_KEY
-web-app-*/*/.secrets.toml
+web-app*/*/.secrets.toml
