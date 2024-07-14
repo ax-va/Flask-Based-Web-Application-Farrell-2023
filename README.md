@@ -112,3 +112,8 @@ https://pypi.org/project/Flask-Bcrypt/
 https://snyk.io/advisor/python/flask-bcrypt
 
 https://pypi.org/project/bcrypt/
+
+## Credentials of test users:
+1. ax-va@email.com secret
+2. johnny-depp@email.com 123456
+3. alex-alex@email.com 123456

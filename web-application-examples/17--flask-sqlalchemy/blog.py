@@ -46,3 +46,8 @@ $ flask run
 """
 
 # To don't log the DEBUG messages, set "FLASK_ENV=production" instead of "FLASK_ENV=development".
+
+# Credentials of test users:
+# 1. ax-va@email.com secret
+# 2. johnny-depp@email.com 123456
+# 3. alex-alex@email.com 123456
