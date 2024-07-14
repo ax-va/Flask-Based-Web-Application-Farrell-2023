@@ -117,3 +117,17 @@ https://pypi.org/project/bcrypt/
 1. ax-va@email.com secret
 2. johnny-depp@email.com 123456
 3. alex-alex@email.com 123456
+
+## Conformation by email with Brevo (earlier SendInBlue)
+
+https://www.brevo.com/de/pricing/
+
+Server-side API client:
+
+https://developers.brevo.com/docs/api-clients
+
+https://github.com/sendinblue/APIv3-python-library
+
+```unix
+(venv) ... $ pip install sib-api-v3-sdk
+```
