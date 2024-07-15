@@ -135,3 +135,12 @@ https://github.com/sendinblue/APIv3-python-library
 ```unix
 (venv) ... $ pip install sib-api-v3-sdk
 ```
+
+Generate an API Key
+
+https://app.brevo.com/settings/keys/api
+
+to add it to .secrets.tolm
+```tolm
+sib_api_key = 'xkeysib-...'
+```
