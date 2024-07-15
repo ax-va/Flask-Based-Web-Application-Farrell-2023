@@ -115,11 +115,11 @@ https://pypi.org/project/bcrypt/
 
 ## Test users
 
-| Fake email             | Password |
-|------------------------|----------|
-| `ax-va@email.com`      | `secret` |
-| `johnny-depp@email.com | `123456` |
-| `alex-alex@email.com`  | `123456` |
+| Fake email                | Password |
+|---------------------------|----------|
+| `ax-va@email.com`         | `secret` |
+| `johnny-depp@email.com`   | `123456` |
+| `alex-alex@email.com`     | `123456` |
 
 
 ## Conformation by email with Brevo (earlier SendInBlue)
