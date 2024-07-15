@@ -114,9 +114,13 @@ https://snyk.io/advisor/python/flask-bcrypt
 https://pypi.org/project/bcrypt/
 
 ## Test users
-1. `ax-va@email.com` `secret`
-2. `johnny-depp@email.com` `123456`
-3. `alex-alex@email.com` `123456`
+
+| Fake email             | Password |
+|------------------------|----------|
+| `ax-va@email.com`      | `secret` |
+| `johnny-depp@email.com | `123456` |
+| `alex-alex@email.com`  | `123456` |
+
 
 ## Conformation by email with Brevo (earlier SendInBlue)
 
