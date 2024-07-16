@@ -140,7 +140,7 @@ Generate an API Key
 
 https://app.brevo.com/settings/keys/api
 
-to add it to `.secrets.tolm`
+and add it to `.secrets.tolm`
 ```tolm
 sib_api_key = 'xkeysib-...'
 ```
