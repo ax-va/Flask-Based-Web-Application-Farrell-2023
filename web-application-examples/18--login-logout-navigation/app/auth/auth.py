@@ -81,7 +81,7 @@ def register_new_user():
             user.last_name = form.last_name.data
             user.email = form.email.data
             user.password = form.password.data
-            # Add the newly created user to the mocked database
+            # Add the newly created user to the database
             db_session.add(user)
             # Commit adding user
             db_session.commit()
