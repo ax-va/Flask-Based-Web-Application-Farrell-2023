@@ -113,10 +113,14 @@ https://snyk.io/advisor/python/flask-bcrypt
 
 https://pypi.org/project/bcrypt/
 
-## Credentials of test users:
-1. ax-va@email.com secret
-2. johnny-depp@email.com 123456
-3. alex-alex@email.com 123456
+## Test users
+
+| Fake email                | Password |
+|---------------------------|----------|
+| `ax-va@email.com`         | `secret` |
+| `johnny-depp@email.com`   | `123456` |
+| `alex-alex@email.com`     | `123456` |
+
 
 ## Conformation by email with Brevo (earlier SendInBlue)
 
@@ -130,4 +134,13 @@ https://github.com/sendinblue/APIv3-python-library
 
 ```unix
 (venv) ... $ pip install sib-api-v3-sdk
+```
+
+Generate an API Key
+
+https://app.brevo.com/settings/keys/api
+
+to add it to `.secrets.tolm`
+```tolm
+sib_api_key = 'xkeysib-...'
 ```
