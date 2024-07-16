@@ -76,11 +76,12 @@ def register_new_user():
         # HTTP POST
         with db_session_manager() as db_session:
             # Create a new user initializing the attributes with form data
-            user = User()
-            user.first_name = form.first_name.data
-            user.last_name = form.last_name.data
-            user.email = form.email.data
-            user.password = form.password.data
+            user = User(
+                first_name=form.first_name.data,
+                last_name=form.last_name.data,
+                email=form.email.data,
+                password=form.password.data,
+            )
             # Add the newly created user to the database
             db_session.add(user)
             # Commit adding user
