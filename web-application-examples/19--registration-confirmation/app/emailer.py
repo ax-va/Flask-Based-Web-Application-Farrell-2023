@@ -13,7 +13,7 @@ sib_configuration.api_key['api-key'] = current_app.config.get("SIB_API_KEY")
 
 def send_mail(to: str, subject: str, contents: str) -> None:
     """
-    Sends an email using Brevo (earlier SendInBlue)
+    Sends an email using Brevo (earlier SendInBlue).
 
     Args:
         to: The email address to send the email to
