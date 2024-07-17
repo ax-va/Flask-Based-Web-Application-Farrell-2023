@@ -136,7 +136,7 @@ https://github.com/sendinblue/APIv3-python-library
 (venv) ... $ pip install sib-api-v3-sdk
 ```
 
-Generate an API Key
+Generate an API key
 
 https://app.brevo.com/settings/keys/api
 
