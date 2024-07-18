@@ -136,9 +136,9 @@ def _send_confirmation_email(user: User) -> None:
     to = user.email
     subject = "Confirm Your Email"
     contents = (
-        f"""Hi {user.first_name},<br/><br/>
-        Welcome to AlexBlog, please click the link to confirm your email within {timeout} hours: <br/><br/>
-        <a href="{confirmation_url}">Click here to complete registration</a><br/><br/>
+        f"""Hi {user.first_name}, welcome to AlexBlog,<br/><br/>
+        please click the link to confirm your email within {timeout} hours.<br/><br/>
+        <a href="{confirmation_url}">Click here to complete registration.</a><br/><br/>
         Thank you!
         """
     )
