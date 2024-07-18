@@ -145,5 +145,5 @@ and add it to `.secrets.tolm`
 sib_api_key = 'xkeysib-...'
 ```
 
-In **emailer.py** in **send_email**, replace `"<validated_sender_email>" with your sender email validated on Brevo.
+In **emailer.py** in **send_email**, replace `<validated_sender_email>` with your sender email validated on Brevo.
 
