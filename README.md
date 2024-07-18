@@ -121,6 +121,10 @@ https://pypi.org/project/bcrypt/
 | `johnny-depp@email.com`   | `123456` |
 | `alex-alex@email.com`     | `123456` |
 
+To see all the users, use a SQL command, for example, in DbVisualizer:
+```unix
+SELECT * FROM users;
+```
 
 ## Conformation by email with Brevo (earlier SendInBlue)
 
