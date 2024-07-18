@@ -126,7 +126,7 @@ To see all the users, use an SQL command, for example, in DbVisualizer:
 SELECT * FROM users;
 ```
 
-<p style="text-align:center">
+<p style="justify-content:center">
   <img src="https://github.com/ax-va/Flask-Based-Web-Applications-Farrell-2023/blob/main/web-apps/19--registration-confirmation/users.png" width="700" alt=""/>
 </p>
 
