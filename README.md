@@ -127,7 +127,7 @@ SELECT * FROM users;
 ```
 
 <p align="center">
-  <img src="https://github.com/ax-va/Flask-Based-Web-Applications-Farrell-2023/blob/main/web-application-examples/19--registration-confirmation/users.png" width="700"/>
+  <img src="https://github.com/ax-va/Flask-Based-Web-Applications-Farrell-2023/blob/main/web-apps/19--registration-confirmation/users.png" width="700"/>
 </p>
 
 ## Conformation by email with Brevo (earlier SendInBlue)
