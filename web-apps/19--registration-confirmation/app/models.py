@@ -12,6 +12,8 @@ from itsdangerous import URLSafeTimedSerializer, SignatureExpired, BadSignature
 
 from . import db
 
+CONFIRMATION_LINK_TIMEOUT: int = current_app.config.get("CONFIRMATION_LINK_TIMEOUT") * 60 * 1000  # milliseconds
+
 
 @contextmanager
 def db_session_manager(session_close=True):
@@ -103,11 +105,14 @@ class User(UserMixin, db.Model):
         """
         Generates a confirmation token using Flask SECRET_KEY,
         the current timestamp for timeout, and the user's UID.
+
+        Returns:
+            string token
         """
-        # Create a serializing instance based on the Flask
-        # SECRET_KEY including the *current timestamp*:
-        # <itsdangerous.url_safe.URLSafeTimedSerializer at ...>
+        # Create a serializing instance based on the Flask SECRET_KEY
+        # including the *current timestamp*
         serializer = URLSafeTimedSerializer(current_app.config["SECRET_KEY"])
+        # <itsdangerous.url_safe.URLSafeTimedSerializer at ...>
         # Create the unique token based on the new user's user_uid value
         # like 'eyJjb25maXJtIjoiZmdta2xtYmRndHdrazEyMzN2bmZoZmoyMzRr...'
         return serializer.dumps({"confirm": self.user_uid})
@@ -119,10 +124,8 @@ class User(UserMixin, db.Model):
         Changes the confirmed attribute to "True".
         """
         serializer = URLSafeTimedSerializer(current_app.config["SECRET_KEY"])
-        confirmation_link_timeout = current_app.config.get("CONFIRMATION_LINK_TIMEOUT")
-        timeout = confirmation_link_timeout * 60 * 1000  # milliseconds
         try:
-            data = serializer.loads(token, max_age=timeout)
+            data = serializer.loads(token, max_age=CONFIRMATION_LINK_TIMEOUT)
             if data.get("confirm") != self.user_uid:
                 return False
             self.confirmed = True
