@@ -155,6 +155,10 @@ sib_api_key = 'xkeysib-...'
 
 In `emailer.py` in `send_email`, replace `<validated_sender_email>` with your sender email validated on Brevo.
 
+See your sent emails, also if they are classified as spam and rejected
+
+https://app-smtp.brevo.com/statistics
+
 ## PyJWT
 
 JSON Web Token implementation in Python

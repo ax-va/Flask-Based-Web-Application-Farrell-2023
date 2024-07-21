@@ -55,6 +55,18 @@
                                 Register a new user
                             </a>
                         </p>
+                        <p>
+                            Forgot Your Password?
+                            <a href="{{ url_for('auth_bp.request_reset_password') }}">
+                                Reset Password
+                            </a>
+                        </p>
+                        <p>
+                            Confirmation Email Expired?
+                            <a href="{{ url_for('auth_bp.resend_confirmation') }}">
+                                Resend Confirmation
+                            </a>
+                        </p>
                     </div>
                 </div>
                 <!-- Create the "Log In" and "Cancel" button elements on the page, passing the element Bootstrap class information -->
