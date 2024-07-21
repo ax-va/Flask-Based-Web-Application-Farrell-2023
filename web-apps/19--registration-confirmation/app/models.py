@@ -121,7 +121,7 @@ class User(UserMixin, db.Model):
         """
         Confirms that a token received in response to clicking the link in the email
         is valid to verify that the user completed the registration process.
-        Changes the confirmed attribute to "True".
+        Changes the confirmed attribute to True.
         """
         serializer = URLSafeTimedSerializer(current_app.config["SECRET_KEY"])
         try:
@@ -130,8 +130,8 @@ class User(UserMixin, db.Model):
                 return False
             self.confirmed = True
             return True
-        except (SignatureExpired, BadSignature):
-            return False
+        except (SignatureExpired, BadSignature) as e:
+            raise e
 
     def __repr__(self):
         return self.user_info

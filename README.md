@@ -155,3 +155,10 @@ sib_api_key = 'xkeysib-...'
 
 In `emailer.py` in `send_email`, replace `<validated_sender_email>` with your sender email validated on Brevo.
 
+## PyJWT
+
+JSON Web Token implementation in Python
+
+https://pypi.org/project/PyJWT/
+
+https://snyk.io/advisor/python/pyjwt

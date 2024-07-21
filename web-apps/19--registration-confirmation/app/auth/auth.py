@@ -123,9 +123,11 @@ def confirm(confirmation_token):
         return redirect(url_for("intro_bp.home"))
 
     try:
-        # Is the confirmation token confirmed?
+        # Can the token be confirmed?
         if current_user.confirm_token(confirmation_token):
+            # The user's "confirmed" attribute changed to True
             with db_session_manager() as db_session:
+                # Update the user in the database
                 db_session.add(current_user)
                 db_session.commit()
                 flash("Thank you for confirming your account.")
@@ -135,7 +137,7 @@ def confirm(confirmation_token):
         flash(str(e))
         # Redirect the user to the resend confirmation page
         return redirect(url_for("auth_bp.resend_confirmation"))
-    #
+    # Redirect to the home page
     return redirect(url_for("intro_bp.home"))
 
 
