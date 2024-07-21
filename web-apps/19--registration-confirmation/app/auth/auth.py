@@ -145,6 +145,9 @@ def confirm(confirmation_token):
 @auth_bp.post("/resend_confirmation")
 def resend_confirmation():
     form = ResendConfirmationForm()
+    if form.cancel.data:
+        return redirect(url_for("auth_bp.login"))
+
     if form.validate_on_submit():
         with db_session_manager() as db_session:
             user = (

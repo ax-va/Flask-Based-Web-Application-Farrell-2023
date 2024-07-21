@@ -6,7 +6,7 @@ from flask import redirect, url_for, render_template, flash, request, current_ap
 from flask_login import login_user, login_required, logout_user, current_user
 
 from . import auth_bp
-from .forms import LoginForm, RegisterNewUserForm, RequestResetPasswordForm, ResetPasswordForm
+from .forms import LoginForm, RegisterNewUserForm, RequestResetPasswordForm, ResetPasswordForm, ResendConfirmationForm
 from ..emailer import send_mail
 from ..models import db_session_manager, User
 from .. import login_manager
@@ -144,6 +144,9 @@ def confirm(confirmation_token):
 @auth_bp.post("/resend_confirmation")
 def resend_confirmation():
     form = ResendConfirmationForm()
+    if form.cancel.data:
+        return redirect(url_for("auth_bp.login"))
+
     if form.validate_on_submit():
         with db_session_manager() as db_session:
             user = (
