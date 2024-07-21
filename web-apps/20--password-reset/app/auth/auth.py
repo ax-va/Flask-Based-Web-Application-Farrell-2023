@@ -140,6 +140,30 @@ def confirm(confirmation_token):
     return redirect(url_for("intro_bp.home"))
 
 
+@auth_bp.get("/resend_confirmation")
+@auth_bp.post("/resend_confirmation")
+def resend_confirmation():
+    form = ResendConfirmationForm()
+    if form.validate_on_submit():
+        with db_session_manager() as db_session:
+            user = (
+                db_session
+                .query(User)
+                .filter(User.email == form.email.data)
+                .one_or_none()
+            )
+            if user is not None:
+                _send_confirmation_email(user)
+                timeout = current_app.config.get("CONFIRMATION_LINK_TIMEOUT")
+                flash((
+                    "Please click on the confirmation link just sent "
+                    f"to your email address within {timeout} hours "
+                    "to complete your registration"
+                ))
+                return redirect(url_for("intro_bp.home"))
+    return render_template("resend_confirmation.html", form=form)
+
+
 @auth_bp.get("/request_reset_password")
 @auth_bp.post("/request_reset_password")
 def request_reset_password():

@@ -6,7 +6,7 @@ from flask import redirect, url_for, render_template, flash, request, current_ap
 from flask_login import login_user, login_required, logout_user, current_user
 
 from . import auth_bp
-from .forms import LoginForm, RegisterNewUserForm
+from .forms import LoginForm, RegisterNewUserForm, ResendConfirmationForm
 from ..emailer import send_mail
 from ..models import db_session_manager, User
 from .. import login_manager
@@ -139,6 +139,30 @@ def confirm(confirmation_token):
         return redirect(url_for("auth_bp.resend_confirmation"))
     # Redirect to the home page
     return redirect(url_for("intro_bp.home"))
+
+
+@auth_bp.get("/resend_confirmation")
+@auth_bp.post("/resend_confirmation")
+def resend_confirmation():
+    form = ResendConfirmationForm()
+    if form.validate_on_submit():
+        with db_session_manager() as db_session:
+            user = (
+                db_session
+                .query(User)
+                .filter(User.email == form.email.data)
+                .one_or_none()
+            )
+            if user is not None:
+                _send_confirmation_email(user)
+                timeout = current_app.config.get("CONFIRMATION_LINK_TIMEOUT")
+                flash((
+                    "Please click on the confirmation link just sent "
+                    f"to your email address within {timeout} hours "
+                    "to complete your registration"
+                ))
+                return redirect(url_for("intro_bp.home"))
+    return render_template("resend_confirmation.html", form=form)
 
 
 def _send_confirmation_email(user: User) -> None:

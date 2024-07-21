@@ -153,3 +153,16 @@ class RegisterNewUserForm(FlaskForm):
             if user is not None:
                 # The exception is automatically caught by Flask and appears as error message in the form
                 raise ValidationError("Email already registered.")
+
+
+class ResendConfirmationForm(FlaskForm):
+    email = EmailField(
+        "Email",
+        validators=[DataRequired(), Length(
+            min=4,
+            max=128,
+            message="Email must be between 4 and 128 characters long"
+        ), Email()],
+        render_kw={"placeholder": " ", "tabindex": 1, "autofocus": True}
+    )
+    cancel = SubmitField("Cancel", render_kw={"tabindex": 3})
