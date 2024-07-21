@@ -151,4 +151,5 @@ class RegisterNewUserForm(FlaskForm):
         with db_session_manager() as db_session:
             user = db_session.query(User).filter(User.email == field.data).one_or_none()
             if user is not None:
+                # The exception is automatically caught by Flask and appears as error message in the form
                 raise ValidationError("Email already registered.")
