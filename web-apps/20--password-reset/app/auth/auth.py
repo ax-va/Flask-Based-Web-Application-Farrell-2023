@@ -175,7 +175,7 @@ def request_reset_password():
 
     form = RequestResetPasswordForm()
     if form.cancel.data:
-        return redirect(url_for("intro_bp.home"))
+        return redirect(url_for("auth_bp.login"))
 
     if form.validate_on_submit():
         with db_session_manager() as db_session:
