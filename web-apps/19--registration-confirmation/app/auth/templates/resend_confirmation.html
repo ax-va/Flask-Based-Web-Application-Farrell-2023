@@ -11,15 +11,15 @@
                 </h5>
                 <div class="card-body">
                     <div class="card-text">
-                        {{form.csrf_token}}
+                        {{ form.csrf_token }}
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="bi bi-envelope fs-4"></i></span>
                             <div class="form-floating form-floating-group flex-grow-1">
-                                {{form.email(class="form-control")}}
-                                {{form.email.label(class="form-label")}}
+                                {{ form.email(class="form-control") }}
+                                {{ form.email.label(class="form-label") }}
                             </div>
                         </div>
-                        {{macros.validation_errors(form.email.errors)}}
+                        {{ macros.validation_errors(form.email.errors) }}
                     </div>
                 </div>
                 <div class="card-footer text-end">
@@ -32,7 +32,7 @@
                     >
                         Resend Confirmation
                     </button>
-                    {{form.cancel(class="btn btn-warning")}}
+                    {{ form.cancel(class="btn btn-warning") }}
                 </div>
             </div>
         </form>

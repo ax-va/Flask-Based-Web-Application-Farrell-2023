@@ -133,3 +133,27 @@
         {% endfor %}
     {% endif %}
 {% endmacro %}
+
+
+{#
+    This macro outputs the HTML code for a Bootstrap modal
+    confirmation dialog with a custome message (question).
+#}
+{% macro form_confirmation_modal(title, message, btn_1, btn_2) %}
+    <div class="modal fade" id="confirmation_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">{{ title }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{ message }}
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="{{ btn_1 | lower }}" class="btn btn-primary">{{ btn_1 }}</button>
+              <button type="button" id="{{ btn_2 | lower }}" class="btn btn-secondary" data-bs-dismiss="modal">{{ btn_2 }}</button>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
