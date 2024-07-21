@@ -116,11 +116,33 @@ def unauthorized_handler():
     return redirect(url_for('auth_bp.login'))
 
 
+@auth_bp.get("/confirm/<confirmation_token>")
+@login_required  # To confirm a token, the user should log in
+def confirm(confirmation_token):
+    if current_user.confirmed:
+        return redirect(url_for("intro_bp.home"))
+
+    try:
+        # Is the confirmation token confirmed?
+        if current_user.confirm_token(confirmation_token):
+            with db_session_manager() as db_session:
+                db_session.add(current_user)
+                db_session.commit()
+                flash("Thank you for confirming your account.")
+    # The confirmation token is bad or expired
+    except Exception as e:
+        logger.exception(e)
+        flash(str(e))
+        # Redirect the user to the resend confirmation page
+        return redirect(url_for("auth_bp.resend_confirmation"))
+    #
+    return redirect(url_for("intro_bp.home"))
+
+
 def _send_confirmation_email(user: User) -> None:
     """
-    Sends a confirmation email to the user to
-    confirm and activate their account after
-    registering as a new user.
+    Sends a confirmation email to the user to confirm and
+    activate their account after registering as a new user.
 
     Args:
         user: The user to send the email to
@@ -143,28 +165,3 @@ def _send_confirmation_email(user: User) -> None:
         """
     )
     send_mail(to=to, subject=subject, contents=contents)
-
-
-@auth_bp.get("/confirm/<confirmation_token>")
-# To confirm a token, the user should log in
-@login_required
-def confirm(confirmation_token):
-    if current_user.confirmed:
-        return redirect(url_for("intro_bp.home"))
-
-    try:
-        # Is the confirmation token confirmed?
-        if current_user.confirm_token(confirmation_token):
-            with db_session_manager() as db_session:
-                db_session.add(current_user)
-                db_session.commit()
-                flash("Thank you for confirming your account.")
-    # The confirmation token is bad or expired
-    except Exception as e:
-        logger.exception(e)
-        flash(str(e))
-        # Redirect the user to the resend confirmation page
-        return redirect(url_for("auth_bp.resend_confirmation"))
-    #
-    return redirect(url_for("intro_bp.home"))
-
