@@ -277,7 +277,7 @@ def _send_password_reset(user: User) -> None:
         <a href="{ url_for('auth_bp.reset_password', token=token, _external=True) }">Reset your password.</a>
         <br/><br/>
         If you haven't requested a password reset ignore this email.<br/><br/>
-        Best regards,<br/>,
+        Best regards,<br/><br/>
         AlexBlog
         """
     )
