@@ -267,14 +267,14 @@ def _send_password_reset(user: User) -> None:
         user: The database user object
     """
     # Create the encrypted reset token with the expiration timeout
-    token = user.generate_reset_token()
+    reset_token = user.generate_reset_token()
     timeout: int = current_app.config.get("PASSWORD_RESET_TIMEOUT")
     to = user.email
     subject = "Password Reset"
     contents = (
         f"""{user.first_name},<br/><br/>
         click the following link to reset your password within {timeout} minutes.
-        <a href="{ url_for('auth_bp.reset_password', token=token, _external=True) }">Reset your password.</a>
+        <a href="{ url_for('auth_bp.reset_password', token=reset_token, _external=True) }">Reset your password.</a>
         <br/><br/>
         If you haven't requested a password reset ignore this email.<br/><br/>
         Best regards,<br/><br/>
