@@ -155,7 +155,7 @@ sib_api_key = 'xkeysib-...'
 
 In `emailer.py` in `send_email`, replace `<validated_sender_email>` with your sender email validated on Brevo.
 
-See your sent emails, even if they are classified as spam and rejected (Soft Bounce)
+Follow sent emails, even if they are classified as spam and rejected (Soft Bounce)
 
 https://app-smtp.brevo.com/statistics
 
